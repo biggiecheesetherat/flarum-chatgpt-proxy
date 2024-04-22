@@ -20,8 +20,6 @@ class ClientProvider extends AbstractServiceProvider
     {
         /** @var \Flarum\Settings\SettingsRepositoryInterface $settings */
         $settings = $this->container->make(SettingsRepositoryInterface::class);
-
-        $apiKey = $settings->get('muhammedsaidckr-chatgpt.api_key');
         $organisation = $settings->get('muhammedsaidckr-chatgpt.openai-api-organisation');
 
         if ($apiKey) {

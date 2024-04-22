@@ -1,4 +1,4 @@
-# ChatGPT
+# ChatGPT Proxy
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/muhammedsaidckr/flarum-chatgpt.svg)](https://packagist.org/packages/muhammedsaidckr/flarum-chatgpt) [![Total Downloads](https://img.shields.io/packagist/dt/muhammedsaidckr/flarum-chatgpt.svg)](https://packagist.org/packages/muhammedsaidckr/flarum-chatgpt)
 

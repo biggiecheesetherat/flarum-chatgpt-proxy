@@ -11,6 +11,63 @@ use Illuminate\Support\Arr;
 use OpenAI;
 use OpenAI\Client;
 
+function askGPT($prompt) {
+    // Define the base URL
+    $api_url = 'https://reverse.mubi.tech/v1';
+
+    // Construct the request body
+    $data = json_encode([
+        'model' => 'gpt-4',
+        'messages' => [
+            [
+                'role' => 'user',
+                'content' => $prompt
+            ]
+        ]
+    ]);
+
+    // Set the cURL options
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $api_url . '/chat/completions',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => $data,
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json',
+            'Origin: https://gptcall.net/',
+            'Referer: https://gptcall.net/'
+        ],
+    ]);
+
+    // Execute the request
+    $response = curl_exec($curl);
+
+    // Check for errors
+    if (curl_errno($curl)) {
+        return 'Error:' . curl_error($curl);
+    }
+
+    // Close cURL session
+    curl_close($curl);
+
+    // Decode the JSON response
+    $responseData = json_decode($response, true);
+
+    // Check if the response is valid
+    if (!$responseData) {
+        return 'Error: Invalid response';
+    }
+
+    // Extract and return the bot's response
+    return $responseData['choices'][0]['message']['content'];
+}
+
 class Agent
 {
     protected int $maxTokens;
@@ -41,18 +98,8 @@ class Agent
     public function repliesTo(Discussion $discussion): void
     {
         $content = $discussion->firstPost->content;
-
-        $response = $this->client->completions()->create([
-            'model' => $this->model,
-            'prompt' => $content,
-            'max_tokens' => $this->maxTokens,
-        ]);
-
-        if (empty($response->choices)) return;
-
-        $choice = Arr::first($response->choices);
-        $respond = $choice->text;
-
+        $respond = askGPT($content)
+        
         if (empty($respond)) return;
 
         $userPrompt = $this->user->id;

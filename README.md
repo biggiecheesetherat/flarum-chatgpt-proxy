@@ -23,4 +23,4 @@ php flarum cache:clear
 ## Links
 
 - [Packagist](https://packagist.org/packages/biggiechesetherat/flarum-chatgpt-proxy)
-- [GitHub]([https://github.com/muhammedsaidckr/flarum-chatgpt](https://github.com/biggiecheesetherat/flarum-chatgpt-proxy/))
+- [Github](https://github.com/biggiecheesetherat/flarum-chatgpt-proxy/)

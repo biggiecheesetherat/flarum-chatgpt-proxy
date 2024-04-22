@@ -2,6 +2,7 @@
 
 /*
  * This file is part of muhammedsaidckr/flarum-chatgpt.
+ * This code was modified to make the extension more suited for a proxy.
  *
  * Copyright (c) 2023 Muhammed Said Cakir.
  *
@@ -32,7 +33,6 @@ return [
         ->listen(Started::class, ReplyToPost::class),
 
     (new Extend\Settings())
-        ->default('muhammedsaidckr-chatgpt.model', 'gpt-3.5-turbo-instruct')
         ->default('muhammedsaidckr-chatgpt.enable_on_discussion_started', true)
         ->default('muhammedsaidckr-chatgpt.max_tokens', 100)
         ->default('muhammedsaidckr-chatgpt.user_prompt_badge_text', 'Assistant')

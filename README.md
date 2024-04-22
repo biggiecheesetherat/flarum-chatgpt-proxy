@@ -9,24 +9,18 @@ A [Flarum](http://flarum.org) extension. This extension integrates the power of 
 Install with composer:
 
 ```sh
-composer require muhammedsaidckr/flarum-chatgpt:"*"
+composer require biggiechesetherat/flarum-chatgpt-proxy:"*"
 ```
 
 ## Updating
 
 ```sh
-composer update muhammedsaidckr/flarum-chatgpt:"*"
+composer update biggiechesetherat/flarum-chatgpt-proxy:"*"
 php flarum migrate
 php flarum cache:clear
 ```
 
-## References (demo)
-- [Ne Istersen Sor](https://neistersensor.com/)
-
-
-
 ## Links
 
-- [Packagist](https://packagist.org/packages/muhammedsaidckr/flarum-chatgpt)
-- [GitHub](https://github.com/muhammedsaidckr/flarum-chatgpt)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [Packagist](https://packagist.org/packages/biggiechesetherat/flarum-chatgpt-proxy)
+- [GitHub]([https://github.com/muhammedsaidckr/flarum-chatgpt](https://github.com/biggiecheesetherat/flarum-chatgpt-proxy/))

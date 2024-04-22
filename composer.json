@@ -1,6 +1,6 @@
 {
-    "name": "muhammedsaidckr/flarum-chatgpt",
-    "description": "This extension integrates the power of ChatGPT within the Flarum platform, enabling seamless AI-powered conversation capabilities for users.",
+    "name": "biggiechesetherat/flarum-chatgpt-proxy",
+    "description": "The ChatGPT Flarum extension, without the need for the API mumbo jumbo.",
     "keywords": [
         "flarum"
     ],
@@ -15,8 +15,13 @@
         {
             "name": "Muhammed Said Cakir",
             "email": "muhammedsaidckr@gmail.com",
-            "role": "Developer"
-        }
+            "role": "Original"
+        },
+        {
+            "name": "Themeatly2 (biggiecheesetherat)",
+            "email": "meatlyseditor@gmail.com",
+            "role": "Original Owner"
+        },
     ],
     "autoload": {
         "psr-4": {
@@ -25,7 +30,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "ChatGPT",
+            "title": "ChatGPT (Proxied)",
             "category": "feature",
             "icon": {
                 "image": "icon.svg"

@@ -21,7 +21,7 @@
             "name": "Themeatly2 (biggiecheesetherat)",
             "email": "meatlyseditor@gmail.com",
             "role": "Original Owner"
-        },
+        }
     ],
     "autoload": {
         "psr-4": {
